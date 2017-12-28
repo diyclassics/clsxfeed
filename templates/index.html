@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+   {% block content %}
+<p>Showing the {{ info.limit}} most recent articles as of {{info.currtime}} from: <br/> <i>{{ info.journals|join(", ") }}</i>.</p>
+   
+    <div class="row">
+    {% for e in entries %}
+        <div class="container">
+            <h1><a href="{{ e.link }}">{{ e.title|safe }}</a></h1>
+            <h2>{{ e.authors }}</h2>
+            <h3><i>{{ e.journal }}</i> {{ e.volume }}</h3>
+            <h5>Published on: {{ e.published }}</h5>
+            <!--- {% for content in e.content %} --->
+            <p>{{ e.content.value|safe }}
+            <!--- {% else %} --->
+            <!--- {{ e.summary_detail.value|safe }}</p> --->
+            <!--- {% endfor %}--->
+        </div>
+    {% endfor %}
+    </div>
