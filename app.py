@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 import sys
 import feedparser
-#import json
 import urllib.request, urllib.parse
 from bs4 import BeautifulSoup
 from datetime import datetime
