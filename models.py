@@ -2,30 +2,27 @@ from app import db
 from sqlalchemy.dialects.postgresql import JSON
 
 
-#class Result(db.Model):
-#    __tablename__ = 'results'
-#
-#    id = db.Column(db.Integer, primary_key=True)
-#    url = db.Column(db.String())
-#    result_all = db.Column(JSON)
-#    result_no_stop_words = db.Column(JSON)
-#
-#    def __init__(self, url, result_all, result_no_stop_words):
-#        self.url = url
-#        self.result_all = result_all
-#        self.result_no_stop_words = result_no_stop_words
-#
-#    def __repr__(self):
-#        return '<id {}>'.format(self.id)
-
 class Entries(db.Model):
     __tablename__ = 'entries'
     
     id = db.Column(db.Integer, primary_key=True)
-    url = db.Column(db.String())
+    link = db.Column(db.String(), unique=True)
+    title = db.Column(db.String())
+    authors = db.Column(db.String())
+    journal = db.Column(db.String())
+    volume = db.Column(db.String())
+    published = db.Column(db.String()) # Date?
+    content = db.Column(db.String())
+
     
-    def __init__(self, url):
-        self.url = url
+    def __init__(self, link, title, authors, journal, volume, published, content):
+        self.link = link
+        self.title = title
+        self.authors = authors
+        self.journal = journal
+        self.volume = volume
+        self.published = published
+        self.content = content
     
     def __repr__(self):
         return '<id {}>'.format(self.id)
