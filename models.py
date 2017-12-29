@@ -23,6 +23,7 @@ class Entries(db.Model):
         self.volume = volume
         self.published = published
         self.content = content
-    
+
+        
     def __repr__(self):
         return '<id {}>'.format(self.id)
