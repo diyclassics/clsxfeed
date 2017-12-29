@@ -9,11 +9,8 @@
             <h2>{{ e.authors }}</h2>
             <h3><i>{{ e.journal }}</i> {{ e.volume }}</h3>
             <h5>Published on: {{ e.published }}</h5>
-            <!--- {% for content in e.content %} --->
-            <p>{{ e.content.value|safe }}
-            <!--- {% else %} --->
-            <!--- {{ e.summary_detail.value|safe }}</p> --->
-            <!--- {% endfor %}--->
+            <p>{{ e.content|safe }}
         </div>
     {% endfor %}
     </div>
+{% endblock %}
