@@ -11,7 +11,7 @@ class Entries(db.Model):
     authors = db.Column(db.String())
     journal = db.Column(db.String())
     volume = db.Column(db.String())
-    published = db.Column(db.String()) # Date?
+    published = db.Column(db.String()) # Date???
     content = db.Column(db.String())
 
     
